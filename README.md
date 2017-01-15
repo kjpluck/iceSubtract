@@ -7,8 +7,8 @@ Download 1979 pngs from ftp://sidads.colorado.edu/pub/DATASETS/nsidc0051_gsfc_na
 
 Download 2016 pngs from ftp://sidads.colorado.edu/pub/DATASETS/nsidc0081_nrt_nasateam_seaice/browse/north/
 
-Rename the pngs to nt_yyymmdd_n.png
+Rename the pngs to `nt_yyymmdd_n.png`
 
-Download nsidc_global_nt_final_and_nrt.txt.gz from https://sites.google.com/site/arctischepinguin/home/sea-ice-extent-area/data
+Download `nsidc_global_nt_final_and_nrt.txt.gz` from https://sites.google.com/site/arctischepinguin/home/sea-ice-extent-area/data
 
-Will require java.time library (joda-time-2.9.7.jar) in code folder of sketch.
+Will require java.time library (`joda-time-2.9.7.jar`) in code folder of sketch.
