@@ -7,7 +7,7 @@ Download 1979 pngs from ftp://sidads.colorado.edu/pub/DATASETS/nsidc0051_gsfc_na
 
 Download 2016 pngs from ftp://sidads.colorado.edu/pub/DATASETS/nsidc0081_nrt_nasateam_seaice/browse/north/
 
-Rename the pngs to `nt_yyymmdd_n.png`
+Make sure all pngs are in the same folder and rename them to `nt_YYYYMMDD_n.png`
 
 Download `nsidc_global_nt_final_and_nrt.txt.gz` from https://sites.google.com/site/arctischepinguin/home/sea-ice-extent-area/data
 
