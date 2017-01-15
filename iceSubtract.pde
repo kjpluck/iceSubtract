@@ -12,7 +12,7 @@ color purple = color(127, 0, 127);
 color white = color(255, 255, 255);
 
 int width = 938;
-int height = 594;
+int height = 620;
 
 Map<String, Float> iceData = new HashMap<String, Float>();
 
@@ -57,7 +57,7 @@ public void loadIceData()
 
 void setup(){
   loadIceData();
-  size(938, 594);
+  size(938, 620);
   mask = loadImage("..\\combinedPngs\\mask_n.png").get(18,29,306,448);
     
   frameRate(30);
@@ -94,21 +94,21 @@ void draw(){
   fill(white);
   textSize(25);
   textAlign(CENTER);
-  text("Arctic sea ice concentration difference between 1979 and 2016 @kevpluck", width/2,25);
-  text(month, width/2, 57);
+  text("Arctic sea ice concentration difference between 1979 and 2016", width/2,25);
+  text(month, width/2, height - 25);
   text("1979", 305/2 +10 , 90);
   text("Difference", 305/2 + 305 +10, 90);
   text("2016", 305/2 + 305*2 +10, 90);
-  //text("@kevpluck", width/2, height - 25);
+  text("@kevpluck", width/2, 57);
   
   Float iceArea1979 = iceData.get(String.format("1979-%02d-%02d 12:00", dt.monthOfYear().get(), dt.dayOfMonth().get()));
   Float iceArea2016 = iceData.get(String.format("2016-%02d-%02d 12:00", dt.monthOfYear().get(), dt.dayOfMonth().get()));
   
   Float diff = iceArea1979 - iceArea2016;
   
-  text(String.format("%.1fM Km²", iceArea1979), 305/2 +10, height - 25);
-  text(String.format("%.1fM Km²", diff), 305/2 + 305 +10, height - 25);
-  text(String.format("%.1fM Km²", iceArea2016), 305/2 + 305*2 +10, height - 25);
+  text(String.format("%.1fM Km²", iceArea1979), 305/2 +10, height - 50);
+  text(String.format("%.1fM Km²", diff), 305/2 + 305 +10, height - 50);
+  text(String.format("%.1fM Km²", iceArea2016), 305/2 + 305*2 +10, height - 50);
   
   textSize(10);
   text("Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data (NSIDC-0051), Near-Real-Time DMSP SSMIS Daily Polar Gridded Sea Ice Concentrations", width/2, height - 8);
