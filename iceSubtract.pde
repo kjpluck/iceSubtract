@@ -46,12 +46,12 @@ public static class Utils{
 
 public void loadIceData()
 {
-  String[] lines = loadStrings("nsidc_global_nt_final_and_nrt.txt");
+  String[] lines = loadStrings("NH_seaice_extent.csv");
   
   for (String line : lines) {
-    if(line.charAt(0) == '#' || line.charAt(0) == ' ') continue;
     String[] data = split(line, ',');
-    iceData.put(data[0], float(trim(data[3])));
+    String key = String.format("%04d-%02d-%02d", int(trim(data[0])), int(trim(data[1])), int(trim(data[2])));
+    iceData.put(key, float(trim(data[3])));
   }
 }
 
@@ -68,6 +68,7 @@ void setup(){
 
 
 int dayOfYear = 1;
+Float iceArea1979 = 0.0;
 
 void draw(){
   fill(purple);
@@ -101,8 +102,9 @@ void draw(){
   text("2016", 305/2 + 305*2 +10, 90);
   text("@kevpluck", width/2, 57);
   
-  Float iceArea1979 = iceData.get(String.format("1979-%02d-%02d 12:00", dt.monthOfYear().get(), dt.dayOfMonth().get()));
-  Float iceArea2016 = iceData.get(String.format("2016-%02d-%02d 12:00", dt.monthOfYear().get(), dt.dayOfMonth().get()));
+  String key1979 = String.format("1979-%02d-%02d", dt.monthOfYear().get(), dt.dayOfMonth().get());
+  if(iceData.containsKey(key1979)){iceArea1979 = iceData.get(key1979);}
+  Float iceArea2016 = iceData.get(String.format("2016-%02d-%02d", dt.monthOfYear().get(), dt.dayOfMonth().get()));
   
   Float diff = iceArea1979 - iceArea2016;
   
